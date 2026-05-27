@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+  type: string;
+  visibility: string;
+  tech: string[];
+  description: string;
+  impact?: string;
+}
+
+const { title, type, visibility, tech, description, impact } = Astro.props;
+---
+
+<div class="flex flex-col rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden hover:shadow-lg transition-shadow p-6">
+  <div class="flex items-center justify-between mb-2">
+    <span class="text-xs font-semibold uppercase tracking-wider text-green-600 dark:text-green-400">
+      {visibility}
+    </span>
+    <span class="text-xs text-zinc-500 dark:text-zinc-500">
+      {type}
+    </span>
+  </div>
+  <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">{title}</h3>
+  <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-4 leading-relaxed">
+    {description}
+  </p>
+  {impact && (
+    <div class="mb-4">
+      <h4 class="text-xs font-bold uppercase text-zinc-500 dark:text-zinc-500 mb-1">Impact</h4>
+      <p class="text-zinc-700 dark:text-zinc-300 text-sm italic border-l-2 border-blue-500 pl-3">
+        {impact}
+      </p>
+    </div>
+  )}
+  <div class="flex flex-wrap gap-2 mt-auto">
+    {tech.map((t) => (
+      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">
+        {t}
+      </span>
+    ))}
+  </div>
+</div>

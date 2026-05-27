@@ -1,17 +1,146 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import SkillGroup from '../components/SkillGroup.astro';
+import { getCollection } from 'astro:content';
 
+const projects = await getCollection('projects', ({ data }) => {
+	return data.featured === true;
+});
+
+const caseStudies = await getCollection('case-studies', ({ data }) => {
+	return data.featured === true;
+});
+
+const skillGroups = [
+  {
+    title: "IT & Systems",
+    skills: ["Windows", "macOS", "Linux", "Microsoft 365", "Endpoint support", "User support", "Troubleshooting", "Documentation"]
+  },
+  {
+    title: "Development",
+    skills: ["JavaScript", "TypeScript", "Python", "PowerShell", "HTML", "CSS", "SQL", "React", "Node.js", "Flask"]
+  },
+  {
+    title: "Infrastructure & Tools",
+    skills: ["Docker", "Git", "GitHub", "MongoDB", "Azure", "Google Cloud", "AWS", "Jira"]
+  },
+  {
+    title: "Learning / Lab Focus",
+    skills: ["Networking", "Systems administration", "Automation", "Cybersecurity fundamentals", "Monitoring", "Self-hosting"]
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<Hero />
+	
+	<section id="projects" class="py-20 bg-zinc-50 dark:bg-zinc-900">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Projects</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{projects.map((project) => (
+					<ProjectCard 
+						title={project.data.title}
+						category={project.data.category}
+						type={project.data.type}
+						tech={project.data.tech}
+						github={project.data.github}
+						description={project.data.description}
+					/>
+				))}
+				{projects.length === 0 && <p class="text-zinc-600 dark:text-zinc-400">Featured projects coming soon...</p>}
+			</div>
+		</div>
+	</section>
+
+	<section id="case-studies" class="py-20 bg-white dark:bg-zinc-950">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Case Studies</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{caseStudies.map((study) => (
+					<CaseStudyCard 
+						title={study.data.title}
+						type={study.data.type}
+						visibility={study.data.visibility}
+						tech={study.data.tech}
+						description={study.data.description}
+						impact={study.data.impact}
+					/>
+				))}
+				{caseStudies.length === 0 && <p class="text-zinc-600 dark:text-zinc-400">Professional case studies coming soon...</p>}
+			</div>
+		</div>
+	</section>
+
+	<section id="workshop" class="py-20 bg-zinc-50 dark:bg-zinc-900">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6">Workshop</h2>
+			<p class="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
+				My workshop is where I test ideas, learn systems, and build projects outside of work. I use it to explore infrastructure, automation, networking, Linux, Docker, self-hosting, monitoring, and security-minded system design.
+			</p>
+			<p class="text-sm text-zinc-500 dark:text-zinc-500 italic">
+				For security reasons, I do not publish detailed architecture diagrams, hostnames, IP ranges, firewall rules, VPN details, or exposed service information.
+			</p>
+		</div>
+	</section>
+
+	<section id="experience" class="py-20 bg-white dark:bg-zinc-950">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Experience</h2>
+			<div class="space-y-12 max-w-3xl">
+				<div class="relative pl-8 border-l border-zinc-200 dark:border-zinc-800">
+					<div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[8.5px] top-1"></div>
+					<h3 class="text-xl font-bold">IT Specialist</h3>
+					<p class="text-blue-600 dark:text-blue-400 font-medium">Streimer — Portland, OR</p>
+					<p class="text-sm text-zinc-500 mb-4">June 2024 – Present</p>
+					<ul class="list-disc list-outside ml-4 text-zinc-600 dark:text-zinc-400 space-y-2">
+						<li>Support internal users, systems, devices, and operational technology needs</li>
+						<li>Develop internal tools and scripts to improve workflows</li>
+						<li>Built and support an internal inventory management system used by shop employees on iPads and iPhones</li>
+					</ul>
+				</div>
+				<div class="relative pl-8 border-l border-zinc-200 dark:border-zinc-800">
+					<div class="absolute w-4 h-4 bg-zinc-400 dark:bg-zinc-600 rounded-full -left-[8.5px] top-1"></div>
+					<h3 class="text-xl font-bold">Software Engineer Intern</h3>
+					<p class="text-blue-600 dark:text-blue-400 font-medium">iGrafx / Portland State University Capstone</p>
+					<p class="text-sm text-zinc-500 mb-4">January 2023 – June 2023</p>
+					<ul class="list-disc list-outside ml-4 text-zinc-600 dark:text-zinc-400 space-y-2">
+						<li>Worked on a 6-person team to build an internal deployment dashboard</li>
+						<li>Built React/Node.js features for deployment tracking and task visibility</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="skills" class="py-20 bg-zinc-50 dark:bg-zinc-900">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Skills</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				{skillGroups.map((group) => (
+					<SkillGroup title={group.title} skills={group.skills} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="py-20 bg-zinc-900 text-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-3xl font-bold tracking-tight mb-6">Contact</h2>
+			<p class="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto">
+				Want to connect about IT, systems work, automation, web apps, or infrastructure projects? Feel free to reach out.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-6">
+				<a href="mailto:daniel@gregoriotorres.com" class="text-xl font-semibold hover:text-blue-400 transition-colors">
+					daniel@gregoriotorres.com
+				</a>
+				<a href="https://linkedin.com/in/daniel-gregorio-torres" class="text-xl font-semibold hover:text-blue-400 transition-colors">
+					LinkedIn
+				</a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

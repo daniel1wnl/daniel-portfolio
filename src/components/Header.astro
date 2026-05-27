@@ -1,0 +1,40 @@
+---
+const navItems = [
+  { name: 'Home', href: '#' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Case Studies', href: '#case-studies' },
+  { name: 'Workshop', href: '#workshop' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Resume', href: '#resume' },
+  { name: 'Contact', href: '#contact' },
+];
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-zinc-900/10 dark:border-zinc-50/[0.06] bg-white/75 dark:bg-zinc-950/75">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex-shrink-0">
+        <a href="/" class="text-xl font-bold tracking-tight">Daniel GT</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          >
+            {item.name}
+          </a>
+        ))}
+      </nav>
+      <div class="md:hidden">
+        {/* Mobile menu button could go here */}
+        <button type="button" class="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
+          <span class="sr-only">Open menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
