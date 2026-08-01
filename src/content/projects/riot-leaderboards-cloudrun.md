@@ -8,8 +8,10 @@ tech:
   - APIs
   - Node.js
 github: "https://github.com/daniel1wnl/riotLeaderboards-cloudRun"
+dates: "September–December 2022"
+status: "Completed; former Cloud Run deployment"
 featured: true
-description: "A web application that fetches and displays leaderboards for Riot Games' titles, deployed using Google Cloud Run for scalability."
+description: "An independently built Flask application that transforms live Riot Games API data into Valorant and League of Legends leaderboards, packaged with Docker and deployed through Google Cloud Run."
 ---
 
 ## Overview

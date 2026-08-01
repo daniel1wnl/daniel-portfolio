@@ -1,32 +1,30 @@
 ---
-title: "Inventory Management System"
+title: "Warehouse Inventory Tracking App"
 type: "Internal Tool / IT + Development"
-visibility: "Sanitized Case Study"
+visibility: "Public-Safe Overview"
+dates: "September–October 2024; maintained 2025–present"
+status: "Completed and in active use"
 tech:
-  - FileMaker
-  - iPadOS/iOS Deployment
-  - Database Design
-  - Internal Support
+  - Microsoft Power Apps
+  - SharePoint Lists
+  - Power Automate
+  - Microsoft 365
 featured: true
-description: "Developed and deployed an internal inventory management system for Streimer’s shop team, supporting database-backed tracking and mobile usage."
-impact: "Improved inventory accuracy, reduced manual entry errors, and provided real-time visibility into shop stock levels."
+description: "Independently designed, built, tested, deployed, and maintained a no-cost internal app that gives a small Shipping and Receiving team searchable records, structured locations, item images, and inventory history."
+impact: "Reduced typical shipment lookup and location time from approximately 25–30 minutes to 5–10 minutes while replacing informal tracking with a consistent digital workflow."
 ---
 
 ## Problem
 
-Streimer’s shop team needed a consistent, digital way to track inventory across multiple locations and devices (iPads/iPhones).
+A Shipping and Receiving team needed a consistent way to track incoming materials, storage locations, job-related items, and inventory movement.
 
 ## What I Built
 
-Developed and deployed an internal inventory management system that supports:
-- Database-backed tracking.
-- Mobile usage for shop employees.
-- Automated weekly archiving.
-- Comprehensive documentation and testing.
+I built the SharePoint data model, Power Apps interface, archive workflow, employee lookup, notification logic, permissions, testing, deployment, and ongoing maintenance.
 
 ## Impact
 
-Improved inventory accuracy, reduced manual entry errors, and provided real-time visibility into shop stock levels.
+The Shipping manager estimated that the app reduced a typical lookup task by 15–25 minutes. It also preserves historical records and reduces reliance on verbal location descriptions.
 
 ## Public Note
 

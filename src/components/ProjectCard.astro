@@ -6,9 +6,11 @@ interface Props {
   tech: string[];
   github?: string;
   description: string;
+  dates: string;
+  status?: string;
 }
 
-const { title, category, type, tech, github, description } = Astro.props;
+const { title, category, type, tech, github, description, dates, status } = Astro.props;
 ---
 
 <div class="flex flex-col rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden hover:shadow-lg transition-shadow">
@@ -22,6 +24,7 @@ const { title, category, type, tech, github, description } = Astro.props;
       </span>
     </div>
     <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">{title}</h3>
+    <p class="text-xs text-zinc-500 dark:text-zinc-500 mb-3">{dates}{status && ` · ${status}`}</p>
     <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-4 line-clamp-3">
       {description}
     </p>

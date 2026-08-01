@@ -23,12 +23,12 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Add resume/contact section
 
 ## Milestone 3: Real project content
-- [ ] Upload content inventory file
-- [ ] Write descriptions for public GitHub projects
-- [ ] Write sanitized internal case studies
-- [ ] Add real homelab/workshop copy
+- [x] Upload content inventory file
+- [x] Write descriptions for public GitHub projects
+- [x] Write sanitized internal case studies
+- [x] Add real homelab/workshop copy
 - [ ] Upload resume PDF to `public/resume/`
-- [ ] Verify GitHub/LinkedIn links
+- [x] Verify GitHub/LinkedIn links
 
 ## Milestone 4: Styling and polish
 - [ ] Refine spacing and typography
@@ -64,9 +64,9 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Email link works
 - [ ] Resume PDF opens (needs file)
 - [x] Phone number is not exposed directly
-- [ ] Public projects have full descriptions
+- [x] Public projects have full descriptions
 - [x] Work projects are sanitized
-- [ ] Homelab details are high-level and safe
+- [x] Homelab details are high-level and safe
 - [x] No internal URLs are exposed
 - [x] No IP addresses are exposed
 - [x] No credentials or secrets are exposed

@@ -2,6 +2,8 @@
 
 Built with **Astro** and **Tailwind CSS**.
 
+For complete Windows setup and local preview instructions, see [LOCAL-DEVELOPMENT.md](./LOCAL-DEVELOPMENT.md).
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
