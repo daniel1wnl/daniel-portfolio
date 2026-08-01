@@ -27,7 +27,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Write descriptions for public GitHub projects
 - [x] Write sanitized internal case studies
 - [x] Add real homelab/workshop copy
-- [ ] Upload resume PDF to `public/resume/`
+- [x] Upload resume PDF to `public/resume/`
 - [x] Verify GitHub/LinkedIn links
 
 ## Milestone 4: Styling and polish
@@ -62,7 +62,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] GitHub link works
 - [x] LinkedIn link works
 - [x] Email link works
-- [ ] Resume PDF opens (needs file)
+- [x] Resume PDF opens
 - [x] Phone number is not exposed directly
 - [x] Public projects have full descriptions
 - [x] Work projects are sanitized

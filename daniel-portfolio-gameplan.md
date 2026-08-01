@@ -748,10 +748,10 @@ Experience
 
 Use a simplified version of the resume.
 
-### IT Specialist - Streimer
+### IT Support Specialist - Streimer
 
 ```text
-IT Specialist
+IT Support Specialist
 Streimer — Portland, OR
 June 2024 – Present
 
@@ -762,10 +762,10 @@ June 2024 – Present
 - Work across IT support, software development, troubleshooting, and process improvement
 ```
 
-### Software Engineer Intern - iGrafx
+### Client-Sponsored Project - iGrafx
 
 ```text
-Software Engineer Intern
+Client-Sponsored Project
 iGrafx / Portland State University Capstone
 January 2023 – June 2023
 

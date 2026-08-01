@@ -144,7 +144,7 @@ const skillGroups = [
 			<div class="space-y-12 max-w-3xl">
 				<div class="relative pl-8 border-l border-zinc-200 dark:border-zinc-800">
 					<div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[8.5px] top-1"></div>
-					<h3 class="text-xl font-bold">IT Specialist</h3>
+					<h3 class="text-xl font-bold">IT Support Specialist</h3>
 					<p class="text-blue-600 dark:text-blue-400 font-medium">Streimer — Portland, OR</p>
 					<p class="text-sm text-zinc-500 mb-4">June 2024 – Present</p>
 					<ul class="list-disc list-outside ml-4 text-zinc-600 dark:text-zinc-400 space-y-2">
@@ -155,7 +155,7 @@ const skillGroups = [
 				</div>
 				<div class="relative pl-8 border-l border-zinc-200 dark:border-zinc-800">
 					<div class="absolute w-4 h-4 bg-zinc-400 dark:bg-zinc-600 rounded-full -left-[8.5px] top-1"></div>
-					<h3 class="text-xl font-bold">Software Engineer Intern</h3>
+					<h3 class="text-xl font-bold">Client-Sponsored Project</h3>
 					<p class="text-blue-600 dark:text-blue-400 font-medium">iGrafx / Portland State University Capstone</p>
 					<p class="text-sm text-zinc-500 mb-4">January 2023 – June 2023</p>
 					<ul class="list-disc list-outside ml-4 text-zinc-600 dark:text-zinc-400 space-y-2">
@@ -174,6 +174,35 @@ const skillGroups = [
 				{skillGroups.map((group) => (
 					<SkillGroup title={group.title} skills={group.skills} />
 				))}
+			</div>
+		</div>
+	</section>
+
+	<section id="resume" class="py-20 bg-white dark:bg-zinc-950">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-8 sm:p-10">
+				<p class="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Résumé</p>
+				<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">Experience at a glance</h2>
+				<p class="max-w-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
+					View or download my general résumé for a concise overview of my IT support, systems administration, automation, internal application development, and technical project experience.
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a
+						href="/resume/Daniel-Gregorio-Torres-Resume.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center px-6 py-3 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+					>
+						View Résumé
+					</a>
+					<a
+						href="/resume/Daniel-Gregorio-Torres-Resume.pdf"
+						download="Daniel-Gregorio-Torres-Resume.pdf"
+						class="inline-flex items-center px-6 py-3 rounded-md border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium hover:bg-white dark:hover:bg-zinc-800 transition-colors"
+					>
+						Download PDF
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>

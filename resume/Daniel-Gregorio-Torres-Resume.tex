@@ -1,0 +1,108 @@
+% Daniel Gregorio-Torres - General-purpose resume
+% This is the master/default resume. Copy this file before tailoring it
+% for a specific job description.
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[margin=0.52in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{
+  leftmargin=0.17in,
+  label=\textbullet,
+  itemsep=0.5pt,
+  topsep=1pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+\urlstyle{same}
+
+\newcommand{\resumesection}[1]{%
+  \vspace{3pt}
+  {\large\bfseries\MakeUppercase{#1}}\par
+  \vspace{1.5pt}
+  \hrule
+  \vspace{2.5pt}
+}
+
+\newcommand{\role}[4]{%
+  \textbf{#1} \hfill \textbf{#2}\\
+  \textit{#3} \hfill \textit{#4}\vspace{1pt}
+}
+
+\newcommand{\project}[3]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  #3
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Daniel Gregorio-Torres}\\[3pt]
+  {\large IT Support Specialist \textbar{} Systems Developer}\\[4pt]
+  Beaverton, Oregon \textbar{}
+  \href{mailto:djgregoriotorres@gmail.com}{djgregoriotorres@gmail.com} \textbar{}
+  503-594-9055\\[2pt]
+  \href{https://daniel.gregoriotorres.com}{daniel.gregoriotorres.com} \textbar{}
+  \href{https://github.com/daniel1wnl}{github.com/daniel1wnl} \textbar{}
+  \href{https://www.linkedin.com/in/daniel-gregorio-torres}{linkedin.com/in/daniel-gregorio-torres}
+\end{center}
+
+\resumesection{Professional Summary}
+
+IT support specialist and systems developer with a B.S. in Computer Science and experience across user support, endpoints, identity, Microsoft 365, and hybrid Windows environments. Builds internal applications and PowerShell automations that replace manual processes, improve data quality, and make IT work more repeatable. Combines hands-on support, full-stack development, documentation, and security-minded implementation.
+
+\resumesection{Technical Skills}
+
+\textbf{IT Operations:} Windows, macOS, Linux, Microsoft 365, endpoint provisioning, troubleshooting, patching, VPN support, mobile device support, technical documentation\\
+\textbf{Identity \& Administration:} Active Directory, Microsoft Entra ID, Group Policy, Exchange, SSO/OAuth, permissions, user lifecycle workflows\\
+\textbf{Automation \& Internal Tools:} PowerShell, Power Apps, Power Automate, SharePoint Lists, JSON, Pester, Zendesk, IIS\\
+\textbf{Development \& Data:} Python, JavaScript, TypeScript, C\#, SQL, React, Node.js, ASP.NET Core, Flask, MongoDB, SQLite, REST APIs\\
+\textbf{Infrastructure \& Delivery:} Git, GitHub, Docker, Google Cloud Run, Azure, AWS, monitoring, backups, self-hosting
+
+\resumesection{Professional Experience}
+
+\role{IT Support Specialist}{June 2024 -- Present}{Streimer}{Portland, Oregon}
+\begin{itemize}
+  \item Provide Tier 1 and Tier 2 support across Windows and mobile endpoints, Microsoft 365, VPN connectivity, user access, hardware, software, and operational technology.
+  \item Administer user accounts, permissions, endpoints, and policy-driven access across Active Directory, Microsoft Entra ID, Exchange, Group Policy, and device-management tooling.
+  \item Design PowerShell automations for workstation provisioning, employee lifecycle workflows, endpoint inventory, patching, backup, validation, and repeatable troubleshooting with logging and safe defaults.
+  \item Independently built and deployed a Power Apps, SharePoint Lists, and Power Automate inventory system that reduced typical material lookup time from approximately 25--30 minutes to 5--10 minutes.
+  \item Developed SafetyCheck, a mobile-first React application that replaced paper equipment inspections with validated, searchable, auditable records and barcode-assisted asset lookup.
+  \item Built an IIS-hosted ASP.NET Core intranet portal for QR-based SOP lookup, mobile PDF viewing, and structured employee acknowledgements; documented deployment, maintenance, and tablet support.
+\end{itemize}
+
+\role{Client-Sponsored Project}{January 2023 -- June 2023}{iGrafx / Portland State University Capstone}{Remote}
+\begin{itemize}
+  \item Collaborated on a six-person team to build a React, Node.js, Express, and MongoDB release dashboard integrating Jira, GitLab, and SonarQube data.
+  \item Designed and implemented the homepage for asynchronous project and deployment data, and contributed throughout requirements, planning, implementation, testing, and stakeholder review.
+  \item Added frontend and backend tests and created JSDoc and project documentation to improve reliability, maintainability, and team handoff.
+\end{itemize}
+
+\resumesection{Selected Technical Projects}
+
+\project{Homelab Workshop}{January 2026 -- Present}{%
+Maintain a private environment for containerized services, storage, backups, monitoring, secure remote access, automation, troubleshooting, and recovery documentation. Practice infrastructure as a lifecycle spanning implementation, validation, maintenance, and restoration.}
+
+\vspace{3pt}
+\project{Riot Games Leaderboard - Google Cloud Run}{September 2022 -- December 2022}{%
+Independently built a Flask application that transforms live Riot Games API data into Valorant and League of Legends leaderboards; tested with Pytest, packaged with Docker, and deployed through Google Cloud Build and Cloud Run.}
+
+\resumesection{Education \& Professional Development}
+
+\textbf{Bachelor of Science in Computer Science, Minor in Business Administration}
+\hfill June 2023\\
+Portland State University \hfill Portland, Oregon\\[2pt]
+\textbf{Web Development Boot Camp}, Portland State University
+\hfill July 2022 -- September 2022\\
+Certificates: Web Development with HTML, CSS \& Bootstrap; Web Development with JavaScript \& APIs
+
+\end{document}
