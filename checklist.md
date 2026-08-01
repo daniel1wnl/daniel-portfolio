@@ -16,7 +16,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Add about section (integrated into hero/index)
 - [x] Add featured work section (Project collection)
 - [x] Add projects section
-- [x] Add case studies section (Case Study collection)
+- [x] Add Internal & Work Projects section
 - [x] Add workshop section
 - [x] Add experience section
 - [x] Add skills section
@@ -25,7 +25,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 ## Milestone 3: Real project content
 - [x] Upload content inventory file
 - [x] Write descriptions for public GitHub projects
-- [x] Write sanitized internal case studies
+- [x] Write public-safe internal work overviews
 - [x] Add real homelab/workshop copy
 - [x] Upload resume PDF to `public/resume/`
 - [x] Verify GitHub/LinkedIn links
@@ -40,7 +40,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [ ] Check accessibility and readability
 
 ## Milestone 5: Deploy
-- [ ] Final push to GitHub
+- [x] Final content push to GitHub
 - [ ] Connect to Cloudflare Pages
 - [ ] Connect custom subdomain (`daniel.gregoriotorres.com`)
 - [ ] Test live links
@@ -48,8 +48,8 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [ ] Test mobile view on real device
 
 ## Milestone 6: Review and improve
-- [ ] Proofread all content
-- [ ] Verify privacy/security (No PII, internal URLs, or IPs)
+- [x] Proofread current content
+- [x] Verify privacy/security (No private data, internal URLs, credentials, or IPs)
 - [ ] External review/feedback
 - [ ] Final link check
 
