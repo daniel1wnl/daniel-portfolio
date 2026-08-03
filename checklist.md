@@ -31,6 +31,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Verify GitHub/LinkedIn links
 
 ## Milestone 4: Styling and polish
+- [x] Build functioning mobile navigation menu
 - [ ] Refine spacing and typography
 - [ ] Improve project cards design
 - [ ] Add skill badges styling
