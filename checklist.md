@@ -41,8 +41,8 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 
 ## Milestone 5: Deploy
 - [x] Final content push to GitHub
-- [ ] Connect to Cloudflare Pages
-- [ ] Connect custom subdomain (`daniel.gregoriotorres.com`)
+- [x] Connect to Cloudflare Pages
+- [x] Connect custom subdomain (`daniel.gregoriotorres.com`)
 - [ ] Test live links
 - [ ] Test resume download
 - [ ] Test mobile view on real device
@@ -72,4 +72,4 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] No credentials or secrets are exposed
 - [x] Site works on mobile
 - [x] Site works on desktop
-- [ ] Site is deployed to daniel.gregoriotorres.com
+- [x] Site is deployed to daniel.gregoriotorres.com
