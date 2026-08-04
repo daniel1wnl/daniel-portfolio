@@ -6,7 +6,7 @@
   --ink: #18181b;
   --muted: #52525b;
   --line: #e4e4e7;
-  --accent: #1d4ed8;
+  --accent: #ff2800;
 }
 
 html {
@@ -30,8 +30,8 @@ h3,
 }
 
 ::selection {
-  background: #bfdbfe;
-  color: #172554;
+  background: #ffd4cc;
+  color: #5c0e00;
 }
 
 :focus-visible {
