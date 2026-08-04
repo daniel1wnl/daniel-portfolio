@@ -32,12 +32,13 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 
 ## Milestone 4: Styling and polish
 - [x] Build functioning mobile navigation menu
-- [ ] Refine spacing and typography
-- [ ] Improve project cards design
-- [ ] Add skill badges styling
-- [ ] Add experience timeline visual polish
+- [x] Add restrained Portland hero image treatment
+- [x] Refine spacing and typography
+- [x] Improve project cards design and organization
+- [x] Add skill badges styling
+- [x] Add experience timeline visual polish
 - [ ] Improve mobile layout
-- [ ] Add hover states and transitions
+- [x] Add restrained hover states and transitions
 - [ ] Check accessibility and readability
 
 ## Milestone 5: Deploy

@@ -13,42 +13,24 @@ interface Props {
 const { title, category, type, tech, github, description, dates, status } = Astro.props;
 ---
 
-<div class="flex flex-col rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden hover:shadow-lg transition-shadow">
-  <div class="p-6 flex-grow">
-    <div class="flex items-center justify-between mb-2">
-      <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-        {category}
-      </span>
-      <span class="text-xs text-zinc-500 dark:text-zinc-500">
-        {type}
-      </span>
-    </div>
-    <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">{title}</h3>
-    <p class="text-xs text-zinc-500 dark:text-zinc-500 mb-3">{dates}{status && ` · ${status}`}</p>
-    <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-4 line-clamp-3">
-      {description}
-    </p>
-    <div class="flex flex-wrap gap-2 mb-4">
-      {tech.map((t) => (
-        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">
-          {t}
-        </span>
-      ))}
-    </div>
+<article class="group flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-400 sm:p-7">
+  <div class="font-mono-display flex flex-wrap items-center justify-between gap-2 text-[0.7rem] uppercase tracking-[0.12em] text-zinc-500">
+    <span>{category}</span>
+    <span>{type}</span>
   </div>
-  <div class="px-6 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-t border-zinc-100 dark:border-zinc-800">
-    {github && (
-      <a 
-        href={github} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 flex items-center"
-      >
-        View on GitHub
-        <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </a>
-    )}
-  </div>
-</div>
+  <h3 class="mt-5 text-xl font-semibold leading-snug tracking-[-0.025em] text-zinc-950">{title}</h3>
+  <p class="font-mono-display mt-2 text-xs text-zinc-500">{dates}{status && ` · ${status}`}</p>
+  <p class="mt-5 flex-grow text-sm leading-6 text-zinc-600">{description}</p>
+
+  <ul aria-label="Technologies" class="mt-6 flex flex-wrap gap-x-3 gap-y-2">
+    {tech.map((technology) => (
+      <li class="font-mono-display text-[0.7rem] text-zinc-500">{technology}</li>
+    ))}
+  </ul>
+
+  {github && (
+    <a href={github} target="_blank" rel="noopener noreferrer" class="font-mono-display mt-7 inline-flex items-center gap-2 self-start text-xs font-semibold uppercase tracking-[0.1em] text-blue-700 transition-colors hover:text-blue-900">
+      Source on GitHub <span aria-hidden="true">↗</span>
+    </a>
+  )}
+</article>

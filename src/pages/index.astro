@@ -4,223 +4,248 @@ import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import CaseStudyCard from '../components/CaseStudyCard.astro';
 import SkillGroup from '../components/SkillGroup.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import { getCollection } from 'astro:content';
 
-const projects = await getCollection('projects', ({ data }) => {
-	return data.featured === true;
-});
+const projects = await getCollection('projects', ({ data }) => data.featured === true);
+const caseStudies = await getCollection('case-studies', ({ data }) => data.featured === true);
 
-const caseStudies = await getCollection('case-studies', ({ data }) => {
-	return data.featured === true;
-});
-
-const completedWork = caseStudies.filter((study) => !study.data.current);
+const schoolProjects = projects.filter((project) => project.data.category === 'School / University');
+const personalProjects = projects.filter((project) => project.data.category === 'Personal');
+const workPriority = [
+  'SafetyCheck',
+  'Mobile SOP and Training Acknowledgement Portal',
+  'Warehouse Inventory Tracking App',
+  'IT Operations Automation'
+];
+const completedWork = caseStudies
+  .filter((study) => !study.data.current)
+  .sort((a, b) => workPriority.indexOf(a.data.title) - workPriority.indexOf(b.data.title));
 const currentWork = caseStudies.filter((study) => study.data.current);
 
 const skillGroups = [
   {
-    title: "IT & Systems",
-    skills: ["Windows", "macOS", "Linux", "Microsoft 365", "Endpoint support", "User support", "Troubleshooting", "Documentation"]
+    title: 'IT & Systems',
+    skills: ['Windows', 'macOS', 'Linux', 'Microsoft 365', 'Endpoint support', 'User support', 'Troubleshooting', 'Documentation']
   },
   {
-    title: "Development",
-    skills: ["JavaScript", "TypeScript", "Python", "PowerShell", "HTML", "CSS", "SQL", "React", "Node.js", "Flask"]
+    title: 'Development',
+    skills: ['JavaScript', 'TypeScript', 'Python', 'PowerShell', 'HTML', 'CSS', 'SQL', 'React', 'Node.js', 'Flask']
   },
   {
-    title: "Infrastructure & Tools",
-    skills: ["Docker", "Git", "GitHub", "MongoDB", "Azure", "Google Cloud", "AWS", "Jira"]
+    title: 'Infrastructure & Tools',
+    skills: ['Docker', 'Git', 'GitHub', 'MongoDB', 'Azure', 'Google Cloud', 'AWS', 'Jira']
   },
   {
-    title: "Learning / Lab Focus",
-    skills: ["Networking", "Systems administration", "Automation", "Cybersecurity fundamentals", "Monitoring", "Self-hosting"]
+    title: 'Learning / Lab Focus',
+    skills: ['Networking', 'Systems administration', 'Automation', 'Cybersecurity fundamentals', 'Monitoring', 'Self-hosting']
   }
 ];
 ---
 
 <BaseLayout>
-	<Hero />
-	
-	<section id="projects" class="py-20 bg-zinc-50 dark:bg-zinc-900">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Projects</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{projects.map((project) => (
-					<ProjectCard 
-						title={project.data.title}
-						category={project.data.category}
-						type={project.data.type}
-						tech={project.data.tech}
-						github={project.data.github}
-						description={project.data.description}
-						dates={project.data.dates}
-						status={project.data.status}
-					/>
-				))}
-				{projects.length === 0 && <p class="text-zinc-600 dark:text-zinc-400">Featured projects coming soon...</p>}
-			</div>
-		</div>
-	</section>
+  <Hero />
 
-	<section id="work-projects" class="py-20 bg-white dark:bg-zinc-950">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">Internal & Work Projects</h2>
-			<p class="max-w-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-12">
-				These public-safe overviews describe the problems I addressed, the solutions I built, the tools I used, and the resulting impact. To protect my employer and coworkers, I do not publish proprietary source code, real company data, employee or customer information, internal URLs, infrastructure details, or production screenshots.
-			</p>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{completedWork.map((study) => (
-					<CaseStudyCard 
-						title={study.data.title}
-						type={study.data.type}
-						visibility={study.data.visibility}
-						tech={study.data.tech}
-						description={study.data.description}
-						impact={study.data.impact}
-						dates={study.data.dates}
-						status={study.data.status}
-					/>
-				))}
-				{completedWork.length === 0 && <p class="text-zinc-600 dark:text-zinc-400">Professional projects coming soon...</p>}
-			</div>
+  <section id="projects" class="bg-white py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      <SectionHeading
+        title="Projects"
+      />
 
-			<div class="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
-				<div class="mb-8">
-					<p class="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">In Progress</p>
-					<h3 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-3">Currently Building</h3>
-					<p class="max-w-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
-						These initiatives are actively evolving through research, prototyping, testing, and stakeholder feedback. Their direction and implementation may change, so only their general purpose and the skills being explored are shared.
-					</p>
-				</div>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					{currentWork.map((study) => (
-						<CaseStudyCard
-							title={study.data.title}
-							type={study.data.type}
-							visibility={study.data.visibility}
-							tech={study.data.tech}
-							description={study.data.description}
-							impact={study.data.impact}
-							dates={study.data.dates}
-							status={study.data.status}
-						/>
-					))}
-				</div>
-			</div>
-		</div>
-	</section>
+      <div>
+        <div class="mb-7 flex flex-col gap-2 border-b border-zinc-200 pb-4 sm:flex-row sm:items-end sm:justify-between">
+          <h3 class="text-xl font-semibold tracking-[-0.025em] text-zinc-950">University & client-sponsored work</h3>
+          <p class="font-mono-display text-xs text-zinc-500">{schoolProjects.length.toString().padStart(2, '0')} projects</p>
+        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
+          {schoolProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              category={project.data.category}
+              type={project.data.type}
+              tech={project.data.tech}
+              github={project.data.github}
+              description={project.data.description}
+              dates={project.data.dates}
+              status={project.data.status}
+            />
+          ))}
+        </div>
+      </div>
 
-	<section id="workshop" class="py-20 bg-zinc-50 dark:bg-zinc-900">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="max-w-4xl rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-8 sm:p-10 shadow-sm">
-				<div class="flex flex-wrap items-center gap-3 mb-4">
-					<span class="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Private Ongoing Lab</span>
-					<span class="text-xs text-zinc-500">January 2026–Present</span>
-				</div>
-				<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6">Homelab Workshop</h2>
-				<p class="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
-					An ongoing hands-on environment where I deploy containerized services, administer storage and backups, practice secure remote access, automate routine operations, monitor service health, and maintain technical runbooks and recovery procedures.
-				</p>
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-sm text-zinc-700 dark:text-zinc-300">
-					<p class="border-l-2 border-blue-500 pl-3">Built and organized private storage with data protection, permissions, and recovery planning.</p>
-					<p class="border-l-2 border-blue-500 pl-3">Deployed repeatable containerized applications and maintained their service dependencies.</p>
-					<p class="border-l-2 border-blue-500 pl-3">Added centralized monitoring, notifications, automation, and troubleshooting documentation.</p>
-					<p class="border-l-2 border-blue-500 pl-3">Practiced infrastructure as a lifecycle: implementation, validation, maintenance, and recovery.</p>
-				</div>
-				<div class="flex flex-wrap gap-2 mb-8">
-				{['Containerized services', 'Storage & backups', 'Monitoring', 'Automation', 'Documentation', 'Secure remote access'].map((item) => (
-					<span class="px-3 py-1 rounded-full text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">{item}</span>
-				))}
-				</div>
-				<p class="text-sm text-zinc-500 dark:text-zinc-500 italic">
-					The repository and services are private. I do not publish operational screenshots, architecture diagrams, hostnames, addresses, access configuration, firewall rules, or exposed service information.
-				</p>
-			</div>
-		</div>
-	</section>
+      <div class="mt-16 sm:mt-20">
+        <div class="mb-7 flex flex-col gap-2 border-b border-zinc-200 pb-4 sm:flex-row sm:items-end sm:justify-between">
+          <h3 class="text-xl font-semibold tracking-[-0.025em] text-zinc-950">Personal & self-hosted work</h3>
+          <p class="font-mono-display text-xs text-zinc-500">{personalProjects.length.toString().padStart(2, '0')} projects</p>
+        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
+          {personalProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              category={project.data.category}
+              type={project.data.type}
+              tech={project.data.tech}
+              github={project.data.github}
+              description={project.data.description}
+              dates={project.data.dates}
+              status={project.data.status}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section id="experience" class="py-20 bg-white dark:bg-zinc-950">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Experience</h2>
-			<div class="space-y-12 max-w-3xl">
-				<div class="relative pl-8 border-l border-zinc-200 dark:border-zinc-800">
-					<div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[8.5px] top-1"></div>
-					<h3 class="text-xl font-bold">IT Support Specialist</h3>
-					<p class="text-blue-600 dark:text-blue-400 font-medium">Streimer — Portland, OR</p>
-					<p class="text-sm text-zinc-500 mb-4">June 2024 – Present</p>
-					<ul class="list-disc list-outside ml-4 text-zinc-600 dark:text-zinc-400 space-y-2">
-						<li>Support internal users, systems, devices, and operational technology needs</li>
-						<li>Develop internal tools and scripts to improve workflows</li>
-						<li>Built and support an internal inventory management system used by shop employees on iPads and iPhones</li>
-					</ul>
-				</div>
-				<div class="relative pl-8 border-l border-zinc-200 dark:border-zinc-800">
-					<div class="absolute w-4 h-4 bg-zinc-400 dark:bg-zinc-600 rounded-full -left-[8.5px] top-1"></div>
-					<h3 class="text-xl font-bold">Client-Sponsored Project</h3>
-					<p class="text-blue-600 dark:text-blue-400 font-medium">iGrafx / Portland State University Capstone</p>
-					<p class="text-sm text-zinc-500 mb-4">January 2023 – June 2023</p>
-					<ul class="list-disc list-outside ml-4 text-zinc-600 dark:text-zinc-400 space-y-2">
-						<li>Worked on a 6-person team to build an internal deployment dashboard</li>
-						<li>Built React/Node.js features for deployment tracking and task visibility</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section id="work-projects" class="border-y border-zinc-200 bg-zinc-50 py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      <SectionHeading
+        title="Internal & Work Projects"
+        intro="These public-safe overviews describe the problems I addressed, the solutions I built, the tools I used, and the resulting impact. To protect my employer and coworkers, I do not publish proprietary source code, real company data, employee or customer information, internal URLs, infrastructure details, or production screenshots."
+      />
 
-	<section id="skills" class="py-20 bg-zinc-50 dark:bg-zinc-900">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-12">Skills</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-				{skillGroups.map((group) => (
-					<SkillGroup title={group.title} skills={group.skills} />
-				))}
-			</div>
-		</div>
-	</section>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {completedWork.map((study) => (
+          <CaseStudyCard
+            title={study.data.title}
+            type={study.data.type}
+            visibility={study.data.visibility}
+            tech={study.data.tech}
+            description={study.data.description}
+            impact={study.data.impact}
+            dates={study.data.dates}
+            status={study.data.status}
+          />
+        ))}
+      </div>
 
-	<section id="resume" class="py-20 bg-white dark:bg-zinc-950">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="max-w-4xl rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-8 sm:p-10">
-				<p class="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Résumé</p>
-				<h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">Experience at a glance</h2>
-				<p class="max-w-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-					View or download my general résumé for a concise overview of my IT support, systems administration, automation, internal application development, and technical project experience.
-				</p>
-				<div class="flex flex-wrap gap-4">
-					<a
-						href="/resume/Daniel-Gregorio-Torres-Resume.pdf"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center px-6 py-3 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
-					>
-						View Résumé
-					</a>
-					<a
-						href="/resume/Daniel-Gregorio-Torres-Resume.pdf"
-						download="Daniel-Gregorio-Torres-Resume.pdf"
-						class="inline-flex items-center px-6 py-3 rounded-md border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium hover:bg-white dark:hover:bg-zinc-800 transition-colors"
-					>
-						Download PDF
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+      <div class="mt-16 border-t border-zinc-300 pt-12 sm:mt-20">
+        <div class="mb-8 max-w-3xl">
+          <p class="font-mono-display mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Current / Exploratory</p>
+          <h3 class="text-2xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-3xl">Currently building</h3>
+          <p class="mt-4 leading-7 text-zinc-600">
+            Active initiatives shaped through research, prototyping, testing, and stakeholder feedback. Their implementation may change, so only their general purpose and explored skills are shared.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {currentWork.map((study) => (
+            <CaseStudyCard
+              title={study.data.title}
+              type={study.data.type}
+              visibility={study.data.visibility}
+              tech={study.data.tech}
+              description={study.data.description}
+              impact={study.data.impact}
+              dates={study.data.dates}
+              status={study.data.status}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section id="contact" class="py-20 bg-zinc-900 text-white">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h2 class="text-3xl font-bold tracking-tight mb-6">Contact</h2>
-			<p class="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto">
-				Want to connect about IT, systems work, automation, web apps, or infrastructure projects? Feel free to reach out.
-			</p>
-			<div class="flex flex-col sm:flex-row justify-center gap-4">
-				<a href="mailto:djgregoriotorres@gmail.com" class="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-					Email Me
-				</a>
-				<a href="https://www.linkedin.com/in/danielgregoriotorres" class="inline-flex items-center justify-center rounded-md border border-zinc-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:border-zinc-400 hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-					LinkedIn
-				</a>
-			</div>
-		</div>
-	</section>
+  <section id="workshop" class="bg-white py-16 sm:py-24">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16 lg:px-10">
+      <div>
+        <p class="font-mono-display mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Private Ongoing Lab</p>
+        <h2 class="text-3xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-4xl">Homelab workshop</h2>
+        <p class="font-mono-display mt-4 text-xs text-zinc-500">January 2026–Present · Ongoing</p>
+      </div>
+      <div>
+        <p class="text-lg leading-8 text-zinc-700">
+          An ongoing hands-on environment where I deploy containerized services, administer storage and backups, practice secure remote access, automate routine operations, monitor service health, and maintain technical runbooks and recovery procedures.
+        </p>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2">
+          {[
+            'Built and organized private storage with data protection, permissions, and recovery planning.',
+            'Deployed repeatable containerized applications and maintained their service dependencies.',
+            'Added centralized monitoring, notifications, automation, and troubleshooting documentation.',
+            'Practiced infrastructure as a lifecycle: implementation, validation, maintenance, and recovery.'
+          ].map((item) => (
+            <p class="border-l-2 border-zinc-300 pl-4 text-sm leading-6 text-zinc-600">{item}</p>
+          ))}
+        </div>
+        <ul aria-label="Homelab focus areas" class="mt-8 flex flex-wrap gap-2">
+          {['Containerized services', 'Storage & backups', 'Monitoring', 'Automation', 'Documentation', 'Secure remote access'].map((item) => (
+            <li class="font-mono-display rounded border border-zinc-200 px-2.5 py-1.5 text-[0.7rem] text-zinc-600">{item}</li>
+          ))}
+        </ul>
+        <p class="mt-8 border-t border-zinc-200 pt-6 text-sm italic leading-6 text-zinc-500">
+          The repository and services are private. I do not publish operational screenshots, architecture diagrams, hostnames, addresses, access configuration, firewall rules, or exposed service information.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="border-y border-zinc-200 bg-zinc-50 py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      <SectionHeading title="Experience" />
+
+      <ol class="relative max-w-5xl border-l border-zinc-300">
+        <li class="relative pb-14 pl-7 sm:grid sm:grid-cols-[11rem_1fr] sm:gap-8 sm:pl-10">
+          <span class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-blue-700 ring-4 ring-zinc-50"></span>
+          <p class="font-mono-display mb-3 text-xs leading-5 text-zinc-500 sm:mb-0">June 2024–Present</p>
+          <div>
+            <h3 class="text-xl font-semibold tracking-[-0.025em] text-zinc-950">IT Support Specialist</h3>
+            <p class="mt-1 text-sm font-medium text-zinc-600">Streimer · Portland, Oregon</p>
+            <ul class="mt-5 space-y-3 text-sm leading-6 text-zinc-600">
+              <li>Support internal users, systems, devices, and operational technology needs.</li>
+              <li>Develop internal tools and scripts to improve workflows.</li>
+              <li>Built and support an internal inventory management system used by shop employees on iPads and iPhones.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="relative pl-7 sm:grid sm:grid-cols-[11rem_1fr] sm:gap-8 sm:pl-10">
+          <span class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-500 ring-4 ring-zinc-50"></span>
+          <p class="font-mono-display mb-3 text-xs leading-5 text-zinc-500 sm:mb-0">January–June 2023</p>
+          <div>
+            <h3 class="text-xl font-semibold tracking-[-0.025em] text-zinc-950">Client-Sponsored Project</h3>
+            <p class="mt-1 text-sm font-medium text-zinc-600">iGrafx / Portland State University Capstone · Remote</p>
+            <ul class="mt-5 space-y-3 text-sm leading-6 text-zinc-600">
+              <li>Worked on a 6-person team to build an internal deployment dashboard.</li>
+              <li>Built React/Node.js features for deployment tracking and task visibility.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-white py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      <SectionHeading title="Skills" />
+      <div class="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+        {skillGroups.map((group) => <SkillGroup title={group.title} skills={group.skills} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="border-y border-zinc-200 bg-zinc-50 py-16 sm:py-20">
+    <div class="mx-auto grid max-w-7xl items-center gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:px-10">
+      <div class="max-w-3xl">
+        <p class="font-mono-display mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Resume</p>
+        <h2 class="text-3xl font-semibold tracking-[-0.035em] text-zinc-950">Experience at a glance</h2>
+        <p class="mt-4 leading-7 text-zinc-600">View or download my general resume for a concise overview of my IT support, systems administration, automation, internal application development, and technical project experience.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/resume/Daniel-Gregorio-Torres-Resume.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center justify-center rounded-md bg-zinc-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-zinc-700">View Resume</a>
+        <a href="/resume/Daniel-Gregorio-Torres-Resume.pdf" download="Daniel-Gregorio-Torres-Resume.pdf" class="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-300 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-800 transition-colors hover:border-zinc-500">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-zinc-950 py-16 text-white sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">Contact</h2>
+          <p class="mt-5 text-base leading-7 text-zinc-400">Want to connect about IT, systems work, automation, web apps, or infrastructure projects? Feel free to reach out.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:djgregoriotorres@gmail.com" class="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200">Email me</a>
+          <a href="https://www.linkedin.com/in/danielgregoriotorres" class="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-zinc-500 hover:bg-zinc-900">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
