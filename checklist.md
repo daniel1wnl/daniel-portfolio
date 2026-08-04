@@ -37,23 +37,23 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Improve project cards design and organization
 - [x] Add skill badges styling
 - [x] Add experience timeline visual polish
-- [ ] Improve mobile layout
+- [x] Improve mobile layout
 - [x] Add restrained hover states and transitions
-- [ ] Check accessibility and readability
+- [x] Check accessibility and readability
 
 ## Milestone 5: Deploy
 - [x] Final content push to GitHub
 - [x] Connect to Cloudflare Pages
 - [x] Connect custom subdomain (`daniel.gregoriotorres.com`)
-- [ ] Test live links
-- [ ] Test resume download
+- [x] Test live links
+- [x] Test resume download
 - [ ] Test mobile view on real device
 
 ## Milestone 6: Review and improve
 - [x] Proofread current content
 - [x] Verify privacy/security (No private data, internal URLs, credentials, or IPs)
 - [ ] External review/feedback
-- [ ] Final link check
+- [x] Final link check
 
 ---
 

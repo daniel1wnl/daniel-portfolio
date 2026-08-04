@@ -1,13 +1,19 @@
 <section aria-labelledby="hero-title" class="relative isolate min-h-[31rem] overflow-hidden bg-zinc-950 text-white sm:min-h-[35rem]">
-  <img
-    src="/images/portland-hero.jpg"
-    alt=""
-    width="4048"
-    height="3032"
-    fetchpriority="high"
-    class="absolute inset-0 -z-20 h-full w-full object-cover object-[56%_52%] saturate-[0.72]"
-    aria-hidden="true"
-  />
+  <picture class="absolute inset-0 -z-20 h-full w-full" aria-hidden="true">
+    <source
+      type="image/webp"
+      srcset="/images/portland-hero-768.webp 768w, /images/portland-hero-1440.webp 1440w, /images/portland-hero-2560.webp 2560w"
+      sizes="100vw"
+    />
+    <img
+      src="/images/portland-hero.jpg"
+      alt=""
+      width="4048"
+      height="3032"
+      fetchpriority="high"
+      class="h-full w-full object-cover object-[56%_52%] saturate-[0.72]"
+    />
+  </picture>
   <div class="absolute inset-0 -z-10 bg-zinc-950/70 sm:bg-zinc-950/45 sm:bg-gradient-to-r sm:from-zinc-950/70 sm:via-zinc-950/55 sm:to-zinc-950/20"></div>
 
   <div class="mx-auto flex min-h-[31rem] max-w-7xl items-center px-5 py-20 sm:min-h-[35rem] sm:px-8 lg:px-10">
@@ -35,14 +41,14 @@
       </div>
 
       <div class="font-mono-display mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.14em] text-zinc-300">
-        <a href="https://github.com/daniel1wnl" class="transition-colors hover:text-white">GitHub</a>
-        <a href="https://www.linkedin.com/in/danielgregoriotorres" class="transition-colors hover:text-white">LinkedIn</a>
-        <a href="#contact" class="transition-colors hover:text-white">Contact</a>
+        <a href="https://github.com/daniel1wnl" class="inline-flex min-h-8 items-center transition-colors hover:text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/danielgregoriotorres" class="inline-flex min-h-8 items-center transition-colors hover:text-white">LinkedIn</a>
+        <a href="#contact" class="inline-flex min-h-8 items-center transition-colors hover:text-white">Contact</a>
       </div>
     </div>
   </div>
 
-  <p class="absolute bottom-3 right-4 text-[0.65rem] text-white/65 sm:right-6">
+  <p class="absolute bottom-3 right-4 text-[0.65rem] text-white/80 sm:right-6">
     Photo by <a href="https://unsplash.com/@shenny_visuals" class="underline decoration-white/30 underline-offset-2 hover:text-white">Justin Shen</a> on <a href="https://unsplash.com/photos/a-large-neon-sign-on-top-of-a-building-k0VeQ6sXHGg" class="underline decoration-white/30 underline-offset-2 hover:text-white">Unsplash</a>
   </p>
 </section>
