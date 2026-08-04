@@ -19,6 +19,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Add Internal & Work Projects section
 - [x] Add workshop section
 - [x] Add experience section
+- [x] Add education and verified credential section
 - [x] Add skills section
 - [x] Add resume/contact section
 
@@ -35,6 +36,7 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Add restrained Portland hero image treatment
 - [x] Refine spacing and typography
 - [x] Improve project cards design and organization
+- [x] Reorder sections around professional relevance
 - [x] Add skill badges styling
 - [x] Add experience timeline visual polish
 - [x] Improve mobile layout

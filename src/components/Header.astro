@@ -1,10 +1,12 @@
 ---
 const navItems = [
   { name: 'Home', href: '#' },
-  { name: 'Projects', href: '#projects' },
   { name: 'Work Projects', href: '#work-projects' },
-  { name: 'Workshop', href: '#workshop' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
+  { name: 'Workshop', href: '#workshop' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Resume', href: '#resume' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -14,16 +16,16 @@ const navItems = [
   <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
     <div class="flex h-16 items-center justify-between">
       <div class="flex-shrink-0">
-        <a href="/" aria-label="Daniel Gregorio-Torres home" class="inline-flex min-h-11 items-center">
+        <a href="/" aria-label="Daniel Gregorio-Torres home" class="-ml-1 inline-flex min-h-11 items-center rounded-md px-1 transition-colors hover:bg-[#FFF1EE]">
           <img src="/brand/dgt-logo.png" alt="" width="512" height="113" class="h-7 w-auto sm:h-8" />
         </a>
       </div>
 
-      <nav aria-label="Primary navigation" class="hidden items-center gap-6 lg:flex">
+      <nav aria-label="Primary navigation" class="hidden items-center gap-5 lg:flex">
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="font-mono-display inline-flex min-h-11 items-center text-xs font-medium uppercase tracking-[0.08em] text-zinc-600 transition-colors hover:text-zinc-950"
+            class="font-mono-display inline-flex min-h-11 items-center text-xs font-medium uppercase tracking-[0.08em] text-zinc-600 transition-colors hover:text-[#D52200]"
           >
             {item.name}
           </a>
@@ -31,7 +33,7 @@ const navItems = [
       </nav>
 
       <details data-mobile-menu class="group relative lg:hidden">
-        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-950 [&::-webkit-details-marker]:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-zinc-700 transition-colors hover:bg-[#FFF1EE] hover:text-[#D52200] [&::-webkit-details-marker]:hidden">
           <span class="sr-only">Toggle navigation menu</span>
           <svg class="h-6 w-6 group-open:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -45,7 +47,7 @@ const navItems = [
           {navItems.map((item) => (
             <a
               href={item.href}
-              class="font-mono-display block rounded-md px-4 py-3 text-xs font-medium uppercase tracking-[0.08em] text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-950"
+              class="font-mono-display block rounded-md px-4 py-3 text-xs font-medium uppercase tracking-[0.08em] text-zinc-700 transition-colors hover:bg-[#FFF1EE] hover:text-[#D52200]"
             >
               {item.name}
             </a>

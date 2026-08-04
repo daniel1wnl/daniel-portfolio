@@ -775,6 +775,17 @@ January 2023 – June 2023
 - Contributed to testing, documentation, and project planning
 ```
 
+#### iGrafx contribution research notes
+
+Confirmed contributions recorded August 2026 while reviewing archived college email:
+
+- Created the company-wide project list page
+- Created the user-specific project list page
+- Contributed unit testing
+- Wrote project documentation
+
+These are working source notes for the future Experience and project-content revision. Add supporting implementation details, technologies, outcomes, and stakeholder feedback as they are recovered from the archived mailbox.
+
 ---
 
 ## Step 9: Build the skills section
