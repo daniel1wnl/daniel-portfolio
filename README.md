@@ -1,37 +1,94 @@
-# Daniel Gregorio-Torres | Personal Portfolio Website
+# Daniel Gregorio-Torres — Personal Portfolio
 
-Built with **Astro** and **Tailwind CSS**.
+The source code and public-safe content for my personal portfolio website: [daniel.gregoriotorres.com](https://daniel.gregoriotorres.com/).
 
-For complete Windows setup and local preview instructions, see [LOCAL-DEVELOPMENT.md](./LOCAL-DEVELOPMENT.md).
+The site presents my professional experience, education, technical skills, public projects, private homelab work, and sanitized overviews of internal tools I have built. It supports my resume, LinkedIn profile, and job applications while protecting employer data and private infrastructure details.
 
-## 🚀 Project Structure
+## Technology
 
-Inside of your Astro project, you'll see the following folders and files:
+- [Astro](https://astro.build/) for the static website and content collections
+- [Tailwind CSS](https://tailwindcss.com/) for styling and responsive layouts
+- Markdown for structured project and internal-work content
+- Cloudflare Pages for hosting and continuous deployment
+
+The production site is statically generated and does not require a database or application server.
+
+## Website Sections
+
+- Internal & Work Projects
+- Experience
+- Education
+- Homelab Workshop
+- University, client-sponsored, and personal projects
+- Technical Skills
+- Resume
+- Contact
+
+Internal work and homelab entries are intentionally limited to public-safe descriptions. Proprietary source code, production data, employee and customer information, internal URLs, credentials, security configurations, and identifiable screenshots are not included.
+
+## Repository Structure
 
 ```text
-/
+daniel-portfolio/
 ├── public/
+│   ├── brand/                 # Public logo assets
+│   ├── images/                # Responsive website imagery
+│   └── resume/                # Resume served by the website
+├── resume/                    # LaTeX resume source and matching PDF
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/            # Reusable Astro components
+│   ├── content/
+│   │   ├── case-studies/      # Public-safe internal work summaries
+│   │   └── projects/          # University and personal projects
+│   ├── layouts/               # Shared document layout and metadata
+│   ├── pages/                 # Website routes
+│   └── styles/                # Global styles and design tokens
+├── LOCAL-DEVELOPMENT.md       # Detailed Windows setup instructions
+├── portfolio-website-checklist.md
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Local Development
 
-## 🧞 Commands
+Requirements:
 
-All commands are run from the root of the project, from a terminal:
+- Node.js 22.12 or newer
+- npm
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Run these commands from the repository root—the directory containing `package.json`:
 
-## 👀 Want to learn more?
+```powershell
+npm ci
+npm run dev
+```
 
-Feel free to check [the documentation](https://docs.astro.build) or jump into the [Discord server](https://astro.build/chat).
+Astro will normally host the development site at [http://localhost:4321/](http://localhost:4321/).
+
+Create and inspect a production build with:
+
+```powershell
+npm run build
+npm run preview
+```
+
+For complete Windows instructions, Google Drive troubleshooting, and an explanation of local versus public changes, see [LOCAL-DEVELOPMENT.md](./LOCAL-DEVELOPMENT.md).
+
+## Deployment
+
+Cloudflare Pages hosts the public website. Pushing an approved commit to the connected `main` branch triggers a new production build and deployment. Local edits do not change the live website until they are committed and pushed to GitHub and the Cloudflare deployment succeeds.
+
+## Resume Maintenance
+
+The editable resume source is stored in [`resume/Daniel-Gregorio-Torres-Resume.tex`](./resume/Daniel-Gregorio-Torres-Resume.tex). After generating a new PDF, both PDF locations must be replaced so the repository copy and public download remain identical:
+
+- `resume/Daniel-Gregorio-Torres-Resume.pdf`
+- `public/resume/Daniel-Gregorio-Torres-Resume.pdf`
+
+Additional resume instructions are available in [`resume/README.md`](./resume/README.md).
+
+## Media and Licensing
+
+The Portland hero photograph is by [Justin Shen](https://unsplash.com/@shenny_visuals) and is used under the [Unsplash License](https://unsplash.com/license). The original photograph is available on [Unsplash](https://unsplash.com/photos/a-large-neon-sign-on-top-of-a-building-k0VeQ6sXHGg).
+
+Unless otherwise noted, the MIT License applies to the original website source code. Personal writing, resume content, personal branding, and logo assets are not offered for reuse under that license. Third-party assets remain subject to their respective licenses.
