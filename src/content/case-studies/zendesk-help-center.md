@@ -1,14 +1,14 @@
 ---
-title: "Zendesk Help Center Improvements"
-type: "Internal Support Platform"
+title: "Zendesk Support Operations Improvements"
+type: "IT Service Management"
 visibility: "Public-Safe Preview"
 dates: "June 2026–Present"
 status: "In progress"
 current: true
-tech: [Zendesk, SSO, Help Center, Forms and Workflows, Access Management, Support Documentation]
+tech: [Zendesk, SSO, Help Center, Ticket Forms, Categorization, Reporting, Dashboards, Support Documentation]
 featured: true
-description: "Improving an existing Zendesk environment and developing an internal SSO-protected Help Center where employees can access support resources and review their ticket activity and history."
-impact: "Aims to create a clearer employee support experience while improving configuration, authentication, information organization, forms, and support workflows."
+description: "Improving the existing Zendesk environment through clearer support forms, consistent ticket categories, more efficient workflows, operational reporting, and an internal SSO-protected Help Center where employees can access resources and review their ticket history."
+impact: "Aims to improve request intake and support data quality while giving IT, managers, and leadership clearer reporting on issue volume, recurring technology problems, and department-level support trends."
 ---
 
 This work is actively evolving. Internal configuration, URLs, authentication details, account structures, and company-specific workflows remain private.
