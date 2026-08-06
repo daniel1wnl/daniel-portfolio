@@ -3,10 +3,15 @@ title: "riotLeaderboards-cloudRun"
 category: "School / University"
 type: "Web App"
 tech:
+  - Python
+  - Flask
+  - Riot Games API
+  - Docker
+  - Google Cloud Build
   - Google Cloud Run
-  - JavaScript
-  - APIs
-  - Node.js
+  - Bootstrap
+  - Jinja2
+  - Pytest
 github: "https://github.com/daniel1wnl/riotLeaderboards-cloudRun"
 dates: "September–December 2022"
 status: "Completed; former Cloud Run deployment"
@@ -24,9 +29,9 @@ Tracking competitive rankings across different regions often requires multiple A
 
 ## What I Built
 
-- Integration with Riot Games API.
-- Backend services using Node.js.
-- Automated deployment pipeline to Google Cloud Run.
+- Riot Games API integration for live Valorant and League of Legends ranking data.
+- A Python and Flask backend with Jinja2 templates and a responsive Bootstrap interface.
+- Pytest endpoint validation and Docker-based deployment through Google Cloud Build and Cloud Run.
 
 ## What I Learned
 

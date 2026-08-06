@@ -12,4 +12,4 @@ description: "A six-person capstone project that unified Jira tasks, SonarQube q
 
 ## My contribution
 
-I created the company-wide project list page and the user-specific project list page, contributed unit testing, and wrote project documentation. Additional contribution details will be added after reviewing archived project correspondence.
+I created the company-wide project list page and the user-specific project list page, contributed unit testing, and wrote project documentation.

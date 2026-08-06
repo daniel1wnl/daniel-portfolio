@@ -4,9 +4,9 @@
 
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage[margin=0.52in]{geometry}
+\usepackage[top=0.4in,bottom=0.4in,left=0.45in,right=0.45in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{charter}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
@@ -15,27 +15,28 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\tabcolsep}{0pt}
+\linespread{1.0}
 \setlist[itemize]{
   leftmargin=0.17in,
   label=\textbullet,
-  itemsep=0.5pt,
-  topsep=1pt,
+  itemsep=1.5pt,
+  topsep=2pt,
   parsep=0pt,
   partopsep=0pt
 }
 \urlstyle{same}
 
 \newcommand{\resumesection}[1]{%
-  \vspace{3pt}
+  \vspace{6pt}
   {\large\bfseries\MakeUppercase{#1}}\par
-  \vspace{1.5pt}
+  \vspace{2pt}
   \hrule
-  \vspace{2.5pt}
+  \vspace{3.5pt}
 }
 
 \newcommand{\role}[4]{%
   \textbf{#1} \hfill \textbf{#2}\\
-  \textit{#3} \hfill \textit{#4}\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\vspace{2.5pt}
 }
 
 \newcommand{\project}[3]{%
@@ -80,11 +81,12 @@ IT support specialist and systems developer with a B.S. in Computer Science and 
   \item Built an IIS-hosted ASP.NET Core intranet portal for QR-based SOP lookup, mobile PDF viewing, and structured employee acknowledgements; documented deployment, maintenance, and tablet support.
 \end{itemize}
 
+\vspace{3pt}
 \role{Client-Sponsored Project}{January 2023 -- June 2023}{iGrafx / Portland State University Capstone}{Remote}
 \begin{itemize}
   \item Collaborated on a six-person team to build a React, Node.js, Express, and MongoDB release dashboard integrating Jira, GitLab, and SonarQube data.
-  \item Designed and implemented the homepage for asynchronous project and deployment data, and contributed throughout requirements, planning, implementation, testing, and stakeholder review.
-  \item Added frontend and backend tests and created JSDoc and project documentation to improve reliability, maintainability, and team handoff.
+  \item Designed and implemented the company-wide project list page and user-specific project list page for project and deployment data.
+  \item Contributed unit testing and project documentation to improve reliability, maintainability, and team handoff.
 \end{itemize}
 
 \resumesection{Selected Technical Projects}
@@ -92,7 +94,7 @@ IT support specialist and systems developer with a B.S. in Computer Science and 
 \project{Homelab Workshop}{January 2026 -- Present}{%
 Maintain a private environment for containerized services, storage, backups, monitoring, secure remote access, automation, troubleshooting, and recovery documentation. Practice infrastructure as a lifecycle spanning implementation, validation, maintenance, and restoration.}
 
-\vspace{3pt}
+\vspace{4pt}
 \project{Riot Games Leaderboard - Google Cloud Run}{September 2022 -- December 2022}{%
 Independently built a Flask application that transforms live Riot Games API data into Valorant and League of Legends leaderboards; tested with Pytest, packaged with Docker, and deployed through Google Cloud Build and Cloud Run.}
 
