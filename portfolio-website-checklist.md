@@ -26,7 +26,7 @@ This checklist tracks the final repository, content, security, metadata, and rel
 - [x] Confirm that the final PDF remains readable by text-extraction and applicant-tracking systems.
 - [x] Create a matching Spanish LaTeX resume without adding unverified claims.
 - [x] Generate a one-page Spanish PDF, verify its metadata and text extraction, and keep both PDF copies identical.
-- [ ] Complete a final wording review of the Spanish resume.
+- [x] Complete a final wording review of the Spanish resume.
 
 ## Multilingual Experience
 
@@ -77,7 +77,7 @@ This checklist tracks the final repository, content, security, metadata, and rel
 ## Release
 
 - [x] Review the final Git diff for private or company-specific information.
-- [ ] Commit the finishing changes with descriptive history-focused messages.
-- [ ] Push `main` to GitHub.
-- [ ] Confirm the Cloudflare deployment succeeds.
-- [ ] Perform one final check of the live website and downloadable resume.
+- [x] Commit the finishing changes with descriptive history-focused messages.
+- [x] Push `main` to GitHub.
+- [x] Confirm the Cloudflare deployment succeeds.
+- [x] Perform one final check of the live website and downloadable resume.
