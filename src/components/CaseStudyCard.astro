@@ -8,9 +8,22 @@ interface Props {
   impact?: string;
   dates: string;
   status: string;
+  outcomeLabel?: string;
+  technologiesLabel?: string;
 }
 
-const { title, type, visibility, tech, description, impact, dates, status } = Astro.props;
+const {
+  title,
+  type,
+  visibility,
+  tech,
+  description,
+  impact,
+  dates,
+  status,
+  outcomeLabel = 'Outcome',
+  technologiesLabel = 'Technologies'
+} = Astro.props;
 ---
 
 <article class="flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-6 sm:p-7">
@@ -24,12 +37,12 @@ const { title, type, visibility, tech, description, impact, dates, status } = As
 
   {impact && (
     <div class="mt-6 border-l-2 border-[#FF2800] pl-4">
-      <p class="font-mono-display text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-zinc-500">Outcome</p>
+      <p class="font-mono-display text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-zinc-500">{outcomeLabel}</p>
       <p class="mt-2 text-sm leading-6 text-zinc-700">{impact}</p>
     </div>
   )}
 
-  <ul aria-label="Technologies" class="mt-auto flex flex-wrap gap-x-3 gap-y-2 pt-7">
+  <ul aria-label={technologiesLabel} class="mt-auto flex flex-wrap gap-x-3 gap-y-2 pt-7">
     {tech.map((technology) => (
       <li class="font-mono-display text-[0.7rem] text-zinc-500">{technology}</li>
     ))}

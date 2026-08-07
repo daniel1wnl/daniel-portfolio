@@ -1,40 +1,51 @@
 ---
-const navItems = [
-  { name: 'Home', href: '#' },
-  { name: 'Work Projects', href: '#work-projects' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Education', href: '#education' },
-  { name: 'Workshop', href: '#workshop' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Resume', href: '#resume' },
-  { name: 'Contact', href: '#contact' },
-];
+import { getTranslations, type Locale } from '../i18n/translations';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).header;
+const homeHref = locale === 'es' ? '/es/' : '/';
+const languageLinkClass = (active: boolean) =>
+  `inline-flex min-h-9 items-center rounded px-1.5 transition-colors hover:bg-[#FFF1EE] hover:text-[#D52200] ${active ? 'font-semibold text-zinc-950' : 'text-zinc-500'}`;
 ---
 
 <header class="sticky top-0 z-40 w-full flex-none border-b border-zinc-200 bg-white/92 backdrop-blur-lg lg:z-50">
   <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
     <div class="flex h-16 items-center justify-between">
       <div class="flex-shrink-0">
-        <a href="/" aria-label="Daniel Gregorio-Torres home" class="-ml-1 inline-flex min-h-11 items-center rounded-md px-1 transition-colors hover:bg-[#FFF1EE]">
+        <a href={homeHref} aria-label={t.homeLabel} class="-ml-1 inline-flex min-h-11 items-center rounded-md px-1 transition-colors hover:bg-[#FFF1EE]">
           <img src="/brand/dgt-logo.png" alt="" width="512" height="113" class="h-7 w-auto sm:h-8" />
         </a>
       </div>
 
-      <nav aria-label="Primary navigation" class="hidden items-center gap-5 lg:flex">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="font-mono-display inline-flex min-h-11 items-center text-xs font-medium uppercase tracking-[0.08em] text-zinc-600 transition-colors hover:text-[#D52200]"
-          >
-            {item.name}
-          </a>
-        ))}
-      </nav>
+      <div class="hidden items-center gap-4 xl:flex">
+        <nav aria-label={t.primaryLabel} class="flex items-center gap-4">
+          {t.nav.map((item) => (
+            <a
+              href={item.href}
+              class="font-mono-display inline-flex min-h-11 items-center text-xs font-medium uppercase tracking-[0.07em] text-zinc-600 transition-colors hover:text-[#D52200]"
+            >
+              {item.name}
+            </a>
+          ))}
+        </nav>
 
-      <details data-mobile-menu class="group relative lg:hidden">
+        <div role="group" aria-label={t.languageLabel} class="font-mono-display ml-1 flex items-center rounded-md border border-zinc-200 bg-zinc-50 p-0.5 text-[0.7rem] tracking-[0.08em]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ml-1 mr-0.5 h-4 w-4 text-zinc-500" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.2-2.4 3.3-5.4 3.3-9S14.2 5.4 12 3m0 18c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3M3.5 9h17M3.5 15h17" />
+          </svg>
+          <a href="/" lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} class={languageLinkClass(locale === 'en')}>EN</a>
+          <span aria-hidden="true" class="text-zinc-300">/</span>
+          <a href="/es/" lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} class={languageLinkClass(locale === 'es')}>ES</a>
+        </div>
+      </div>
+
+      <details data-mobile-menu class="group relative xl:hidden">
         <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-zinc-700 transition-colors hover:bg-[#FFF1EE] hover:text-[#D52200] [&::-webkit-details-marker]:hidden">
-          <span class="sr-only">Toggle navigation menu</span>
+          <span class="sr-only">{t.toggleLabel}</span>
           <svg class="h-6 w-6 group-open:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
@@ -43,16 +54,26 @@ const navItems = [
           </svg>
         </summary>
 
-        <nav aria-label="Mobile navigation" class="absolute right-0 top-12 z-50 w-64 overflow-hidden rounded-lg border border-zinc-200 bg-white p-2 shadow-xl shadow-zinc-950/10">
-          {navItems.map((item) => (
-            <a
-              href={item.href}
-              class="font-mono-display block rounded-md px-4 py-3 text-xs font-medium uppercase tracking-[0.08em] text-zinc-700 transition-colors hover:bg-[#FFF1EE] hover:text-[#D52200]"
-            >
-              {item.name}
-            </a>
-          ))}
-        </nav>
+        <div class="absolute right-0 top-12 z-50 w-64 overflow-hidden rounded-lg border border-zinc-200 bg-white p-2 shadow-xl shadow-zinc-950/10">
+          <nav aria-label={t.mobileLabel}>
+            {t.nav.map((item) => (
+              <a
+                href={item.href}
+                class="font-mono-display block rounded-md px-4 py-3 text-xs font-medium uppercase tracking-[0.08em] text-zinc-700 transition-colors hover:bg-[#FFF1EE] hover:text-[#D52200]"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+          <div role="group" aria-label={t.languageLabel} class="font-mono-display mt-2 flex items-center justify-center gap-2 border-t border-zinc-200 px-4 pt-2 text-xs tracking-[0.08em]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-zinc-500" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.2-2.4 3.3-5.4 3.3-9S14.2 5.4 12 3m0 18c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3M3.5 9h17M3.5 15h17" />
+            </svg>
+            <a href="/" lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} class={languageLinkClass(locale === 'en')}>EN</a>
+            <span aria-hidden="true" class="text-zinc-300">/</span>
+            <a href="/es/" lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} class={languageLinkClass(locale === 'es')}>ES</a>
+          </div>
+        </div>
       </details>
     </div>
   </div>

@@ -1,0 +1,122 @@
+% Daniel Gregorio-Torres - Currículum general en español
+% Esta es la versión maestra en español. Copie este archivo antes de
+% adaptarlo a una oferta de trabajo específica.
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{charter}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\hypersetup{
+  pdftitle={Currículum de Daniel Gregorio-Torres},
+  pdfauthor={Daniel Gregorio-Torres},
+  pdfsubject={Soporte de TI, administración de sistemas y desarrollo},
+  pdfkeywords={soporte de TI, administración de sistemas, automatización, PowerShell, desarrollo web}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{0.98}
+\setlist[itemize]{
+  leftmargin=0.17in,
+  label=\textbullet,
+  itemsep=1pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+\urlstyle{same}
+
+\newcommand{\resumesection}[1]{%
+  \vspace{4pt}
+  {\large\bfseries\MakeUppercase{#1}}\par
+  \vspace{2pt}
+  \hrule
+  \vspace{2.5pt}
+}
+
+\newcommand{\role}[4]{%
+  \textbf{#1} \hfill \textbf{#2}\\
+  \textit{#3} \hfill \textit{#4}\vspace{2.5pt}
+}
+
+\newcommand{\project}[3]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  #3
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Daniel Gregorio-Torres}\\[4pt]
+  Beaverton, Oregón \textbar{}
+  \href{mailto:djgregoriotorres@gmail.com}{djgregoriotorres@gmail.com}
+  \\[2pt]
+  \textbf{Sitio web:} \href{https://daniel.gregoriotorres.com/es/}{daniel.gregoriotorres.com} \textbar{}
+  \textbf{GitHub:} \href{https://github.com/daniel1wnl}{daniel1wnl} \textbar{}
+  \textbf{LinkedIn:} \href{https://linkedin.com/in/danielgregoriotorres}{danielgregoriotorres}
+\end{center}
+
+\resumesection{Resumen profesional}
+
+Especialista en soporte de TI y desarrollador de sistemas con Licenciatura en Ciencias de la Computación y experiencia en soporte a usuarios, equipos, identidad, Microsoft 365 y entornos Windows híbridos. Desarrollo aplicaciones internas y automatizaciones con PowerShell que sustituyen procesos manuales y hacen que el trabajo de TI sea más repetible. Combino soporte técnico, desarrollo full-stack, documentación e implementaciones orientadas a la seguridad.
+
+\resumesection{Habilidades técnicas}
+
+\textbf{Operaciones de TI:} Windows, macOS, Linux, Microsoft 365, preparación de equipos, resolución de problemas, aplicación de parches, soporte de VPN, dispositivos móviles, documentación técnica\\
+\textbf{Identidad y administración:} Active Directory, Microsoft Entra ID, Group Policy, Exchange, SSO/OAuth, permisos, ciclo de vida de usuarios\\
+\textbf{Automatización y herramientas internas:} PowerShell, Power Apps, Power Automate, SharePoint Lists, JSON, Pester, Zendesk, IIS\\
+\textbf{Desarrollo y datos:} Python, JavaScript, TypeScript, C\#, SQL, React, Node.js, ASP.NET Core, Flask, MongoDB, SQLite, APIs REST\\
+\textbf{Infraestructura y entrega:} Git, GitHub, Docker, Google Cloud Run, Azure, AWS, monitoreo, respaldos, autohospedaje
+
+\resumesection{Experiencia profesional}
+
+\role{Especialista en soporte de TI}{Junio de 2024 -- Actualidad}{Streimer}{Portland, Oregón}
+\begin{itemize}
+  \item Brindo soporte de nivel 1 y nivel 2 para equipos Windows y dispositivos móviles, Microsoft 365, conectividad VPN, acceso de usuarios, hardware, software y tecnología operativa.
+  \item Administro cuentas, permisos, equipos y acceso basado en políticas mediante Active Directory, Microsoft Entra ID, Exchange, Group Policy y herramientas de administración de dispositivos.
+  \item Diseño automatizaciones con PowerShell para preparar estaciones de trabajo, gestionar el ciclo de vida de empleados, inventariar equipos, aplicar parches, realizar respaldos, validar procesos y estandarizar la resolución de problemas con registros y configuraciones seguras.
+  \item Desarrollé y desplegué de forma independiente un sistema de inventario con Power Apps, SharePoint Lists y Power Automate que redujo el tiempo habitual para localizar materiales de aproximadamente 25--30 minutos a 5--10 minutos.
+  \item Desarrollé SafetyCheck, una aplicación móvil con React que sustituyó las inspecciones en papel por registros validados, consultables y auditables, con búsqueda de equipos mediante códigos de barras.
+  \item Creé un portal de intranet con ASP.NET Core alojado en IIS para consultar procedimientos mediante códigos QR, visualizar archivos PDF en dispositivos móviles y registrar confirmaciones estructuradas; documenté su despliegue, mantenimiento y soporte para tabletas.
+\end{itemize}
+
+\vspace{1pt}
+\role{Proyecto patrocinado por un cliente}{Enero de 2023 -- Junio de 2023}{iGrafx / Proyecto final de Portland State University}{Remoto}
+\begin{itemize}
+  \item Colaboré en un equipo de seis personas para desarrollar un panel de lanzamientos con React, Node.js, Express y MongoDB que integraba datos de Jira, GitLab y SonarQube.
+  \item Diseñé e implementé la página con la lista general de proyectos de la empresa y la página con los proyectos específicos de cada usuario.
+  \item Contribuí con pruebas unitarias y documentación para mejorar la confiabilidad, el mantenimiento y la entrega del proyecto.
+\end{itemize}
+
+\resumesection{Proyectos técnicos seleccionados}
+
+\project{Laboratorio doméstico}{Enero de 2026 -- Actualidad}{%
+Mantengo un entorno privado para servicios en contenedores, almacenamiento, respaldos, monitoreo, acceso remoto seguro, automatización, resolución de problemas y documentación de recuperación. Practico la infraestructura como un ciclo de vida que abarca implementación, validación, mantenimiento y restauración.}
+
+\vspace{2pt}
+\project{Clasificaciones de Riot Games - Google Cloud Run}{Septiembre de 2022 -- Diciembre de 2022}{%
+Desarrollé de forma independiente una aplicación con Flask que transforma datos en vivo de la API de Riot Games en clasificaciones de Valorant y League of Legends; la probé con Pytest, la empaqueté con Docker y la desplegué mediante Google Cloud Build y Cloud Run.}
+
+\resumesection{Educación y desarrollo profesional}
+
+\textbf{Licenciatura en Ciencias de la Computación, Minor en Administración de Empresas}
+\hfill Junio de 2023\\
+Portland State University \hfill Portland, Oregón\\[2pt]
+\textbf{Portland State University - Web Development Program}
+\hfill Septiembre de 2022\\
+\textit{Credenciales verificadas:}
+\href{https://www.credential.net/d5c287ef-5859-4de5-81e1-039377d2f609}{Finalización del programa} \textbar{}
+\href{https://www.credential.net/97ce4aa2-99d3-4365-9dbf-cbbb423643b4}{JavaScript y APIs} \textbar{}
+\href{https://www.credential.net/557f8a88-302f-4e70-bff1-672f41ed74d5}{HTML, CSS y Bootstrap}
+
+\end{document}
+

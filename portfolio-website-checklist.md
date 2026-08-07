@@ -24,22 +24,36 @@ This checklist tracks the final repository, content, security, metadata, and rel
 - [x] Generate a new one-page PDF after the LaTeX changes.
 - [x] Replace both repository PDF copies and verify that their hashes match.
 - [x] Confirm that the final PDF remains readable by text-extraction and applicant-tracking systems.
+- [x] Create a matching Spanish LaTeX resume without adding unverified claims.
+- [x] Generate a one-page Spanish PDF, verify its metadata and text extraction, and keep both PDF copies identical.
+- [ ] Complete a final wording review of the Spanish resume.
+
+## Multilingual Experience
+
+- [x] Keep English at `/` and add the complete Spanish portfolio at `/es/`.
+- [x] Refactor the homepage into shared locale-aware components.
+- [x] Translate visible section, project, work, navigation, button, and accessibility copy.
+- [x] Add an accessible `EN / ES` selector to desktop and mobile navigation.
+- [x] Add localized page metadata, canonical URLs, and `hreflang` alternates.
+- [x] Make each locale use its matching resume and provide an alternate-language resume link.
+
 
 ## Dependencies and Build Security
 
-- [ ] Upgrade Astro and related dependencies to patched versions.
-- [ ] Review any Astro major-version migration requirements before upgrading.
-- [ ] Run `npm audit` and confirm that actionable vulnerabilities are resolved.
-- [ ] Run a clean `npm ci` followed by `npm run build`.
-- [ ] Confirm the production build completes without warnings or errors.
+- [x] Upgrade Astro and related dependencies to patched versions.
+- [x] Review any Astro major-version migration requirements before upgrading.
+- [x] Run `npm audit` and confirm that actionable vulnerabilities are resolved.
+- [x] Run a clean `npm ci` followed by `npm run build`.
+- [x] Confirm the production build completes without warnings or errors.
 
 ## Metadata and Sharing
 
-- [ ] Configure the production site URL in Astro.
+- [x] Configure the production site URL in Astro.
 - [x] Update the page title to use `IT Support Specialist` consistently.
-- [ ] Add a canonical URL.
-- [ ] Add Open Graph title, description, URL, type, and preview image metadata.
-- [ ] Add Twitter/X card metadata.
+- [x] Add canonical URLs for both language versions.
+- [x] Add localized Open Graph title, description, URL, type, and locale metadata.
+- [ ] Add an Open Graph preview image.
+- [x] Add Twitter/X card metadata.
 - [ ] Create a minimal 1200-by-630 social preview image for LinkedIn and other platforms.
 - [ ] Test the deployed URL with social-sharing preview tools after release.
 

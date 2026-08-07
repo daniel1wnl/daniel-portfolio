@@ -8,9 +8,22 @@ interface Props {
   description: string;
   dates: string;
   status?: string;
+  sourceLabel?: string;
+  technologiesLabel?: string;
 }
 
-const { title, category, type, tech, github, description, dates, status } = Astro.props;
+const {
+  title,
+  category,
+  type,
+  tech,
+  github,
+  description,
+  dates,
+  status,
+  sourceLabel = 'Source on GitHub',
+  technologiesLabel = 'Technologies'
+} = Astro.props;
 ---
 
 <article class="group flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-6 transition-colors hover:border-[#FF2800] sm:p-7">
@@ -22,7 +35,7 @@ const { title, category, type, tech, github, description, dates, status } = Astr
   <p class="font-mono-display mt-2 text-xs text-zinc-500">{dates}{status && ` · ${status}`}</p>
   <p class="mt-5 flex-grow text-sm leading-6 text-zinc-600">{description}</p>
 
-  <ul aria-label="Technologies" class="mt-6 flex flex-wrap gap-x-3 gap-y-2">
+  <ul aria-label={technologiesLabel} class="mt-6 flex flex-wrap gap-x-3 gap-y-2">
     {tech.map((technology) => (
       <li class="font-mono-display text-[0.7rem] text-zinc-500">{technology}</li>
     ))}
@@ -30,7 +43,7 @@ const { title, category, type, tech, github, description, dates, status } = Astr
 
   {github && (
     <a href={github} target="_blank" rel="noopener noreferrer" class="font-mono-display mt-5 inline-flex min-h-9 items-center gap-2 self-start text-xs font-semibold uppercase tracking-[0.1em] text-zinc-700 transition-colors hover:text-[#D52200]">
-      Source on GitHub <span aria-hidden="true">↗</span>
+      {sourceLabel} <span aria-hidden="true">↗</span>
     </a>
   )}
 </article>
