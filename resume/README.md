@@ -20,6 +20,12 @@ public/resume/Daniel-Gregorio-Torres-Resume.pdf
 public/resume/Daniel-Gregorio-Torres-Resume-ES.pdf
 ```
 
-Keep matching repository copies in `resume/`. When either source changes, regenerate its PDF, replace both copies, and verify that their hashes match.
+Keep matching repository copies in `resume/`. When either source changes:
+
+1. Regenerate the corresponding PDF.
+2. Confirm that it remains one page and visually inspect the complete layout.
+3. Verify its title, author, subject, and keyword metadata.
+4. Confirm that its text can be extracted cleanly for applicant-tracking systems.
+5. Replace both PDF copies and verify that their SHA-256 hashes match.
 
 Do not place private notes, job descriptions, or draft tailoring material in the public website directory.

@@ -8,7 +8,7 @@ This checklist tracks the final repository, content, security, metadata, and rel
 - [x] Document the live website, purpose, technology stack, structure, local development, and Cloudflare deployment workflow.
 - [x] Document the privacy boundaries used for internal work and homelab content.
 - [x] Add hero photograph attribution and clarify code, content, branding, and third-party asset licensing.
-- [ ] Mark `daniel-portfolio-gameplan.md` as a historical planning document or add a current-status notice.
+- [x] Mark `daniel-portfolio-gameplan.md` as a historical planning document or add a current-status notice.
 
 ## Website Content
 
@@ -20,7 +20,8 @@ This checklist tracks the final repository, content, security, metadata, and rel
 ## Resume
 
 - [x] Replace the iGrafx homepage claim with the confirmed company-wide project list, user-specific project list, unit testing, and documentation contributions.
-- [ ] Add useful PDF metadata such as title and author to the LaTeX source.
+- [x] Add useful PDF metadata such as title and author to the LaTeX source.
+- [x] Regenerate the English PDF, replace both copies, and verify their hashes after the metadata update.
 - [x] Generate a new one-page PDF after the LaTeX changes.
 - [x] Replace both repository PDF copies and verify that their hashes match.
 - [x] Confirm that the final PDF remains readable by text-extraction and applicant-tracking systems.
@@ -52,27 +53,27 @@ This checklist tracks the final repository, content, security, metadata, and rel
 - [x] Update the page title to use `IT Support Specialist` consistently.
 - [x] Add canonical URLs for both language versions.
 - [x] Add localized Open Graph title, description, URL, type, and locale metadata.
-- [ ] Add an Open Graph preview image.
+- [ ] Add an Open Graph preview image. Deferred until the portfolio is featured or actively shared on social platforms.
 - [x] Add Twitter/X card metadata.
-- [ ] Create a minimal 1200-by-630 social preview image for LinkedIn and other platforms.
-- [ ] Test the deployed URL with social-sharing preview tools after release.
+- [ ] Create a minimal 1200-by-630 social preview image for LinkedIn and other platforms. Deferred for now.
+- [ ] Test the deployed URL with social-sharing preview tools after adding the preview image.
 
 ## Asset Cleanup
 
-- [ ] Remove or replace the unused default Astro `favicon.svg`.
-- [ ] Confirm `favicon.ico`, `favicon.png`, and the Apple touch icon all use the current black D branding.
-- [ ] Confirm the navigation logo remains sharp and readable at desktop and mobile sizes.
+- [x] Remove or replace the unused default Astro `favicon.svg`.
+- [x] Confirm `favicon.ico`, `favicon.png`, and the Apple touch icon all use the current black D branding.
+- [x] Confirm the navigation logo remains sharp and readable at desktop and mobile sizes.
 
 ## Final Quality Assurance
 
-- [ ] Test navigation, hover, focus, and mobile-menu behavior.
-- [ ] Test the website on at least one real phone, one laptop, and one large desktop viewport.
-- [ ] Verify all GitHub, credential, LinkedIn, photograph-credit, email, and resume links.
-- [ ] Verify keyboard navigation and visible focus states.
-- [ ] Verify text contrast and reduced-motion behavior.
-- [ ] Confirm the live Cloudflare deployment matches the approved local production build.
+- [x] Test navigation, hover, focus, and mobile-menu behavior.
+- [x] Test the website on at least one real phone, one laptop, and one large desktop viewport.
+- [x] Verify all GitHub, credential, LinkedIn, photograph-credit, email, and resume links.
+- [x] Verify keyboard navigation and visible focus states.
+- [x] Verify text contrast and reduced-motion behavior.
+- [x] Confirm the live Cloudflare deployment matches the approved local production build.
 - [ ] Obtain one external review from someone seeing the portfolio for the first time.
-- [ ] Update the original `checklist.md` after this finishing checklist is complete.
+- [x] Update the original `checklist.md` after this finishing checklist is complete.
 
 ## Release
 

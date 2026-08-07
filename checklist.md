@@ -2,6 +2,8 @@
 
 Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 
+> This file preserves the original development milestones. The authoritative current-status checklist is [`portfolio-website-checklist.md`](./portfolio-website-checklist.md).
+
 ## Milestone 1: Basic site running
 - [x] Create Astro project locally
 - [x] Install Tailwind CSS
@@ -49,13 +51,24 @@ Based on the [Gameplan](./daniel-portfolio-gameplan.md).
 - [x] Connect custom subdomain (`daniel.gregoriotorres.com`)
 - [x] Test live links
 - [x] Test resume download
-- [ ] Test mobile view on real device
+- [x] Test mobile view on real device
 
 ## Milestone 6: Review and improve
 - [x] Proofread current content
 - [x] Verify privacy/security (No private data, internal URLs, credentials, or IPs)
 - [ ] External review/feedback
 - [x] Final link check
+
+## Milestone 7: Bilingual release and maintenance
+- [x] Upgrade Astro and related dependencies and resolve audit findings
+- [x] Add complete English and Spanish routes
+- [x] Add accessible language selection and localized metadata
+- [x] Create and publish matching English and Spanish resumes
+- [x] Verify live Cloudflare deployment and resume downloads
+- [x] Clean up favicon and branding assets
+- [x] Add metadata to the English LaTeX resume source
+- [x] Regenerate and publish the English PDF after its metadata update
+- [ ] Add and test a social-sharing preview image (deferred)
 
 ---
 

@@ -1,5 +1,9 @@
 # Daniel Gregorio-Torres Personal Portfolio Website Gameplan
 
+> [!NOTE]
+> This is a historical planning document retained for project history. It describes the original direction of the portfolio and may not reflect the current implementation.
+> For current status and remaining work, see [`portfolio-website-checklist.md`](./portfolio-website-checklist.md).
+
 ## Project Goal
 
 Build a professional personal portfolio website for:
